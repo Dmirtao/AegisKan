@@ -1,0 +1,10 @@
+Learn all from https://www.w3schools.com/
+
+HTML Refresher
+JavaScript and all its friends (jQuery, JSON, AJAX)
+XML and its friends
+
+
+
+SVG.js (http://svgjs.com/)
+KanjiVG (http://kanjivg.tagaini.net/index.html)
