@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SVG.js</title>
+  <title>TestWrapper</title>
 </head>
 <body>
-  <div id="drawing"></div>
+	<h2>Testbed</h2>
+  <img src="hachikujiVec.png" title="Hachikuji is cute" alt="Hachikuji is lost" width="300">
+  <p>Q: How cute is Hachikuji?</p>
+  <button type="button" onclick="document.getElementById('cuteness').innerHTML = 'A: Hachikuji is very cute!'">Very</button>
+  <button type="button" onclick="document.getElementById('cuteness').innerHTML = 'A: Hachikuji is super cute!'">Super</button>
+
+  <p id="cuteness"><br></p>
+
+  <p></p>
 </body>
 </html>
