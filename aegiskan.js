@@ -1,62 +1,119 @@
-// AegisKan, by Dmirtao (Andy Karsai), 2018
-//
-// General structure of AegisKan, first Stage:
-// Webpage frontend, with Javascript running main logic. 
-// Use frontend to make AJAX queries for SVG/XML Kanji data, and store in Javascript space.
-// (An alternate future method may be loading in all of Kanji SVG data on pageload, only ~40MB )
-// Once desired SVG are in Javascript, create SVG.js objects from them as a container
-// Draw out the SVG.js objects to the webpage.
-//
-// 2nd Stage Structure:
-//
-//
-//
+// Under construction
+
+// Credit to:
+/**
+ * Copyright (C) 2012 Axel Bodart.
+ *
+ * This work is distributed under the conditions of the Creative Commons
+ * Attribution-Share Alike 3.0 Licence. This means you are free:
+ * to Share - to copy, distribute and transmit the work
+ * to Remix - to adapt the work
+
+ * Under the following conditions:
+ * * Attribution. You must attribute the work by stating your use of KanjiVG in
+ *    your own copyright header and linking to KanjiVG's website
+ *    (http://kanjivg.tagaini.net)
+ * * Share Alike. If you alter, transform, or build upon this work, you may
+ *    distribute the resulting work only under the same or similar license to this
+ *    one.
+ *
+ * See http://creativecommons.org/licenses/by-sa/3.0/ for more details.
+ */
 
 
-
-
-$(document).ready(function() {
-	
-	$("button").ready(function () {
+AegisKanView = {
+	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji) {
 		/* body... */
-		$("button").click(function () {
-			/* body... */
-			$("#drawBox").load("kanjivg/kanji/05e38.svg");
-			//getChar("kanjivg/kanji/05e38.svg");
-		});
-	});
+		this.paper = new SVG(divName);
+		this.strokeWidth = strokeWidth;
+		this.fontSize = fontSize;
+		this.zoomFactor = zoomFactor;
+		this.kanji = kanji;
+		this.fetchNeeded = true;
+		this.setZoom(zoomFactor);
+		this.refreshKanji();
+	},
+	setZoom:function (zoomFactor) {
+		this.paper = // SVG set viewbox
+	},
 
+	setStrokeWidth:function (strokeWidth) {
+		this.strokeWidth = strokeWidth;
+	},
 
+	setFontSize:function (fontSize) {
+		this.fontSize = fontSize;
+	},
 
-
-});
-
-function unicodeToCharURL (unicodeVal) {
-	// body... 
-	var urlGen = "kanji/" + unicodeVal + ".svg";
-	return urlGen;
-}
-
-function loadChar(unicodeVal) {
-	var xhttp = new XMLHttpRequest();
-	var urlToFetch = unicodeToCharURL(unicodeVal);
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			parseCharXml(this);
+	setKanji:function (kanji) {
+		if (kanji != this.kanji && kanji != '' && kanji != undefined) {
+			this.kanji = kanji;
+			this.fetchNeeded = true;
 		}
-	};
-	xhttp.open("GET",urlToFetch,true);
-	xhttp.send();
-}	
+	},
 
-function parseCharXml (xml) {
-	// Argument: Unicode value for character loading. Should have format kanjivg/kanji/#####.svg
-	// https://www.w3schools.com/js/js_ajax_xmlfile.asp
-	var xmlDoc = xml.responseXML;
-	var gArr = xmlDoc.getElementsByTagName("g");
-	var pathArr = xmlDoc.getElementsByTagName("path");
-}
+	refreshKanji:function () {
+		if (this.fetchNeeded && this.kanji != "") {
+			var parent = this;
+			// this.paper.clear() ; Clear the SVG() object
+			         //    loader.attr({
+            //     'x':50,
+            //     'y':50,
+            //     'fill':'black',
+            //     'font-size':18,
+            //     'text-anchor':'start'
+            // });
+			var loader = 0; // this.paper.text(0,0,'Loading' + this.kanji);
+			loader.attr({
+				''
+			});
+			jQuery.ajax({
+				url:'kanji/0' + this.kanji.charCodeAt(0).toString(16) + '.svg',
+				dataType: 'xml',
+				success:function (results) {
+					parent.fetchNeeded = false;
+					parent.xml = results;
+					parent.drawKanji();
+				},
+				statusCode:{
+					404:function() {
+						// this.paper.clear() ; Clear the SVG() object
+						var error = //this.paper.text(0,0,'Loading' + this.kanji);
+						                  //       var error = parent.paper.text(0, 0, parent.kanji + ' not found');
+                        // error.attr({
+                        //     'x':50,
+                        //     'y':50,
+                        //     'fill':'black',
+                        //     'font-size':18,
+                        //     'text-anchor':'start'
+                        // });
+					}
+				}
+			})
+		}
+		else {
+			this.drawKanji();
+		}
+		/* body... */
+	},
 
-function makeSVGkan (svgData) {
-	// Make SVG.js object from fetched svgData from getChar)_ 
-}
+	createStroke:function (path,color) {
+		/* body... */
+	},
+
+	createHover:function(stroke) {
+
+	},
+
+	createHovers:function(strokes) {
+
+	},
+	drawKanji:function() {
+		var parent = this;
+		// this.paper.clear() ; Clear the SVG() object
+
+		var groups = jQuery(this.xml).find('svg > g > g > g');
+		
+
+	}
+};
