@@ -33,26 +33,28 @@ $(document).ready(function() {
 
 function unicodeToCharURL (unicodeVal) {
 	// body... 
-	var urlGen = unicodeVal;
+	var urlGen = "kanji/" + unicodeVal + ".svg";
 	return urlGen;
 }
 
+function loadChar(unicodeVal) {
+	var xhttp = new XMLHttpRequest();
+	var urlToFetch = unicodeToCharURL(unicodeVal);
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			parseCharXml(this);
+		}
+	};
+	xhttp.open("GET",urlToFetch,true);
+	xhttp.send();
+}	
 
-function getChar (url) {
+function parseCharXml (xml) {
 	// Argument: Unicode value for character loading. Should have format kanjivg/kanji/#####.svg
 	// https://www.w3schools.com/js/js_ajax_xmlfile.asp
-
-
-	// var svgData = new XMLHttpRequest();
-	// svgData.onreadystatechange = function() {
-	// 	if (this.readyState == 4 && this.status == 200) {
-	// 		// Send addresses should be the main SVG.js canvas/object
-	// 		// ....
-	// 		document.getElementById(;="simp").innerHTML = this.
-	// 	}
-	// }
-	// svgData.open("GET", url, true);
- //  	svgData.send();
+	var xmlDoc = xml.responseXML;
+	var gArr = xmlDoc.getElementsByTagName("g");
+	var pathArr = xmlDoc.getElementsByTagName("path");
 }
 
 function makeSVGkan (svgData) {
