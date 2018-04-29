@@ -39,7 +39,8 @@ AegisKanView = {
 		this.refreshKanji();
 	},
 	setZoom:function (zoomFactor) {
-		this.paper = // SVG set viewbox
+		var dim = 109 * zoomFactor;
+		this.paper = this.paper.viewbox(0,0,dim,dim);
 	},
 
 	setStrokeWidth:function (strokeWidth) {
@@ -112,14 +113,13 @@ AegisKanView = {
 		return stroke;
 	},
 
-	createHover:function(stroke) {
+	// createHover:function(stroke) {
 
-	},
+	// },
 
-	createHovers:function(strokes) {
+	// createHovers:function(strokes) {
 
-	},
-
+	// },
 
 	drawKanji:function() {
 		var parent = this;
