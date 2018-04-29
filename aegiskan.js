@@ -20,6 +20,10 @@
  * See http://creativecommons.org/licenses/by-sa/3.0/ for more details.
  */
 
+ /**
+* Dependencies: jQuery, SVG.js, KanjiVG
+ */
+
 
 AegisKanView = {
 	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji) {
@@ -113,7 +117,7 @@ AegisKanView = {
 		// this.paper.clear() ; Clear the SVG() object
 
 		var groups = jQuery(this.xml).find('svg > g > g > g');
-		
+
 
 	}
 };
