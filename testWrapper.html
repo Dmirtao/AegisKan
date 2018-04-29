@@ -17,8 +17,45 @@
 </head>
 <body>
 
+<script type="text/javascript"> 
+    jQuery(document).ready(function () {
+    	function u (argument) {
+    		// body... 
+    	}
+
+
+
+    });
+
+</script>
+
 	<h1 style="text-align: center;"><b>AegisKan</b></h1>
-	<div id="drawBox"></div>
+	
+	<form id="viewerParams" action="#" class="form-horizontal">
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label" for="kanji">Kanji</label>
+				
+				<div class="controls docs-input-sizes">
+					<input class="span3" type="text" value="" id="kanji" placeholder="e.g. 勝">
+				</div>
+			</div>
+			<br>
+			<div class="control-group">
+				<label class="control-label" for="strokeWidth">Stroke Width</label>
+				<div class="controls docs-input-sizes">
+					<input class="span3" type="text" value="3" id="strokeWidth" placeholder="3">
+				</div>
+				
+
+			</div>
+
+		</fieldset>
+		
+
+
+	</form>
+<!-- 	<div id="drawBox"></div>
 	<div id="simp"></div>
 
 	<button>Get Kanji</button>
@@ -27,7 +64,7 @@
 		<input type="text" size="5" id="charform" name="character"> <br>
 		<input type="submit" value="Submit">
 	</form>
-	<!-- <button type="button" onclick="">Parse Char</button> -->
+ -->	<!-- <button type="button" onclick="">Parse Char</button> -->
 
 </body>
 </html>

@@ -26,7 +26,7 @@
 
 
 AegisKanView = {
-	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji) {
+	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji, color) {
 		/* body... */
 		this.paper = new SVG(divName);
 		this.strokeWidth = strokeWidth;
@@ -34,6 +34,7 @@ AegisKanView = {
 		this.zoomFactor = zoomFactor;
 		this.kanji = kanji;
 		this.fetchNeeded = true;
+		this.color = color;
 		this.setZoom(zoomFactor);
 		this.refreshKanji();
 	},
@@ -59,17 +60,15 @@ AegisKanView = {
 	refreshKanji:function () {
 		if (this.fetchNeeded && this.kanji != "") {
 			var parent = this;
-			this.paper.clear() ; Clear the SVG() object
-			         //    loader.attr({
-            //     'x':50,
-            //     'y':50,
-            //     'fill':'black',
-            //     'font-size':18,
-            //     'text-anchor':'start'
-            // });
-			var loader = 0; // this.paper.text(0,0,'Loading' + this.kanji);
-			loader.attr({
-				''
+			this.paper.clear() ; //Clear the SVG() object
+			var loader = this.paper.text("Loading" + this.kanji);
+			loader.font({
+				x: 		'50',
+				y: 		'50',
+				fill: 	'black',
+				family: 'sans-serif',
+				size: 	'18',
+				anchor: 'start'
 			});
 			jQuery.ajax({
 				url:'kanji/0' + this.kanji.charCodeAt(0).toString(16) + '.svg',
@@ -81,16 +80,16 @@ AegisKanView = {
 				},
 				statusCode:{
 					404:function() {
-						this.paper.clear() ; Clear the SVG() object
-						var error = //this.paper.text(0,0,'Loading' + this.kanji);
-						                  //       var error = parent.paper.text(0, 0, parent.kanji + ' not found');
-                        // error.attr({
-                        //     'x':50,
-                        //     'y':50,
-                        //     'fill':'black',
-                        //     'font-size':18,
-                        //     'text-anchor':'start'
-                        // });
+						this.paper.clear(); //Clear the SVG() object
+						var error = parent.paper.text(parent.kanji + ' not found.');
+						error.font({
+							x: 		'50',
+							y: 		'50',
+							fill: 	'black',
+							family: 'sans-serif',
+							size: 	'18',
+							anchor: 'start'
+						})
 					}
 				}
 			})
@@ -102,7 +101,15 @@ AegisKanView = {
 	},
 
 	createStroke:function (path,color) {
-		/* body... */
+		var stroke = this.paper.path(jQuery(path).attr('d'));
+		stroke['initColor'] = color;
+		stroke.attr({
+			'stroke':color,
+			'stroke-width':this.strokeWidth,
+			'stroke-linecap':'round',
+			'stroke-linejoin':'round'
+		});
+		return stroke;
 	},
 
 	createHover:function(stroke) {
@@ -112,12 +119,16 @@ AegisKanView = {
 	createHovers:function(strokes) {
 
 	},
+
+
 	drawKanji:function() {
 		var parent = this;
-		// this.paper.clear() ; Clear the SVG() object
-
+		this.paper.clear(); //Clear the SVG() object
+		//         Raphael.getColor.reset();
 		var groups = jQuery(this.xml).find('svg > g > g > g');
-
-
+		jQuery(this.xml).find('path').each(function () {
+			var color = parent.color;
+			var stroke = parent.createStroke(this,color)
+		});
 	}
 };
