@@ -59,7 +59,7 @@ AegisKanView = {
 	refreshKanji:function () {
 		if (this.fetchNeeded && this.kanji != "") {
 			var parent = this;
-			// this.paper.clear() ; Clear the SVG() object
+			this.paper.clear() ; Clear the SVG() object
 			         //    loader.attr({
             //     'x':50,
             //     'y':50,
@@ -81,7 +81,7 @@ AegisKanView = {
 				},
 				statusCode:{
 					404:function() {
-						// this.paper.clear() ; Clear the SVG() object
+						this.paper.clear() ; Clear the SVG() object
 						var error = //this.paper.text(0,0,'Loading' + this.kanji);
 						                  //       var error = parent.paper.text(0, 0, parent.kanji + ' not found');
                         // error.attr({
