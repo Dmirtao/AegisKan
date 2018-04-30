@@ -58,6 +58,7 @@ AegisKanView = {
 		}
 	},
 
+	// Core querying code
 	refreshKanji:function () {
 		if (this.fetchNeeded && this.kanji != "") {
 			var parent = this;
@@ -121,6 +122,7 @@ AegisKanView = {
 
 	// },
 
+	// Core drawing function
 	drawKanji:function() {
 		var parent = this;
 		this.paper.clear(); //Clear the SVG() object
