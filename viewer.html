@@ -48,11 +48,17 @@
     		12,
     		jQuery('#zoomFactor').val(),
     		kanji,
-    		color
+    		color,
+    		'false'
     	);
     	jQuery('#viewerParams').submit(function() {
     		AegisKanView.setStrokeWidth(jQuery('#strokeWidth').val());
     		AegisKanView.setZoom(jQuery('#zoomFactor').val());
+    		if (jQuery('#animate').prop('checked')) {
+    			AegisKanView.setAnimate('true');
+			} else {
+				AegisKanView.setAnimate('false');
+			}
     		AegisKanView.setKanji(jQuery('#kanji').val());
     		AegisKanView.refreshKanji();
     		return false;
