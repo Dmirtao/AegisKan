@@ -8,7 +8,7 @@
 
 
 AegisKanView = {
-	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji, color, animate) {
+	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji, color, animate, animateTime) {
 		this.paper = new SVG(divName);
 		this.strokeWidth = strokeWidth;
 		this.fontSize = fontSize;
@@ -17,6 +17,7 @@ AegisKanView = {
 		this.fetchNeeded = true;
 		this.color = color;
 		this.animate = animate;
+		this.animateTime = animateTime;
 		this.setZoom(zoomFactor);
 		this.refreshKanji();
 	},
@@ -35,6 +36,10 @@ AegisKanView = {
 
 	setAnimate: function(animate) {
 		this.animate = animate;
+	},
+
+	setAnimateTime: function (animateTime) {
+		this.animateTime = animateTime;
 	},
 
 	setKanji:function (kanji) {
@@ -91,8 +96,9 @@ AegisKanView = {
 	},
 
 	createStroke:function (path,color) {
+		var dur = this.animateTime;
 		if (this.animate == 'true') {
-			var stroke = this.paper.path(jQuery(path).attr('d')).drawAnimated({duration: 500, easing: '<>'}); // Make duration adjustable and add delay arrays
+			var stroke = this.paper.path(jQuery(path).attr('d')).drawAnimated({duration: dur, easing: '<>'}); // Make duration adjustable and add delay arrays
 		} else {
 			var stroke = this.paper.path(jQuery(path).attr('d'));
 		}

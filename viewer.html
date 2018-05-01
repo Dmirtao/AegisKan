@@ -36,13 +36,14 @@
     		jQuery('#kanji').val(kanji);
     	}
     	AegisKanView.initialize(
-    		"aegisKanView",
-    		jQuery('#strokeWidth').val(),
-    		12,
-    		jQuery('#zoomFactor').val(),
-    		kanji,
-    		color,
-    		'false'
+    		"aegisKanView",						// divName
+    		jQuery('#strokeWidth').val(),		// strokeWidth
+    		12,									// fontSize
+    		jQuery('#zoomFactor').val(),		// zoomFactor
+    		kanji,								// kanji
+    		color,								// color
+    		'false',							// animate
+    		'1000'								// animateTime
     	);
     	jQuery('#viewerParams').submit(function() {
     		AegisKanView.setStrokeWidth(jQuery('#strokeWidth').val());
@@ -52,6 +53,7 @@
 			} else {
 				AegisKanView.setAnimate('false');
 			}
+			AegisKanView.setAnimateTime(jQuery('#animateTime').val());
     		AegisKanView.setKanji(jQuery('#kanji').val());
     		AegisKanView.refreshKanji();
     		return false;
@@ -83,6 +85,13 @@
 				<label class="control-label" for="zoomFactor">Zoom Factor</label>
 				<div class="controls docs-input-sizes">
 					<input class="span3" type="text" value="100" id="zoomFactor" placeholder="100">
+				</div>
+			</div>
+			<br>
+			<div class="control-group">
+				<label class="control-label" for="animateTime">Animation Time per Stroke (ms)</label>
+				<div class="controls docs-input-sizes">
+					<input class="span3" type="text" value="1000" id="animateTime" placeholder="1000">
 				</div>
 			</div>
 			<br>
