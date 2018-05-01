@@ -82,7 +82,7 @@ AegisKanView = {
 				},
 				statusCode:{
 					404:function() {
-						this.paper.clear(); //Clear the SVG() object
+						// this.paper.clear(); //Clear the SVG() object
 						var error = parent.paper.text(parent.kanji + ' not found.');
 						error.font({
 							x: 		'50',
