@@ -1,24 +1,6 @@
+// AegisKan
+// By Dmirtao, 2018
 // Under construction
-
-// Credit to:
-/**
- * Copyright (C) 2012 Axel Bodart.
- *
- * This work is distributed under the conditions of the Creative Commons
- * Attribution-Share Alike 3.0 Licence. This means you are free:
- * to Share - to copy, distribute and transmit the work
- * to Remix - to adapt the work
-
- * Under the following conditions:
- * * Attribution. You must attribute the work by stating your use of KanjiVG in
- *    your own copyright header and linking to KanjiVG's website
- *    (http://kanjivg.tagaini.net)
- * * Share Alike. If you alter, transform, or build upon this work, you may
- *    distribute the resulting work only under the same or similar license to this
- *    one.
- *
- * See http://creativecommons.org/licenses/by-sa/3.0/ for more details.
- */
 
  /**
 * Dependencies: jQuery, SVG.js, KanjiVG
@@ -27,7 +9,6 @@
 
 AegisKanView = {
 	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji, color, animate) {
-		/* body... */
 		this.paper = new SVG(divName);
 		this.strokeWidth = strokeWidth;
 		this.fontSize = fontSize;
@@ -40,7 +21,7 @@ AegisKanView = {
 		this.refreshKanji();
 	},
 	setZoom:function (zoomFactor) {
-		var dim = 109 * zoomFactor;
+		var dim = 109 * zoomFactor; // Fix this oddity
 		this.paper = this.paper.viewbox(0,0,dim,dim);
 	},
 
@@ -67,9 +48,9 @@ AegisKanView = {
 
 	// Core querying code
 	refreshKanji:function () {
-		if (this.fetchNeeded && this.kanji != "") {
+		if (this.fetchNeeded && this.kanji != "") { 
 			var parent = this;
-			this.paper.clear() ; //Clear the SVG() object
+			this.paper.clear() ; //Clear the SVG() object. Make this work properly even when nothing is drawn
 			var loader = this.paper.text("Loading" + this.kanji);
 			loader.font({
 				x: 		'50',
@@ -80,7 +61,7 @@ AegisKanView = {
 				anchor: 'start'
 			});
 			jQuery.ajax({
-				url:'kanji/0' + this.kanji.charCodeAt(0).toString(16) + '.svg',
+				url:'kanji/0' + this.kanji.charCodeAt(0).toString(16) + '.svg', // Fetch char code of first element and convert to hexadecimal string
 				dataType: 'xml',
 				success:function (results) {
 					parent.fetchNeeded = false;
@@ -89,7 +70,7 @@ AegisKanView = {
 				},
 				statusCode:{
 					404:function() {
-						// this.paper.clear(); //Clear the SVG() object
+						// this.paper.clear(); // Make this clear() work even when nothing is drawn
 						var error = parent.paper.text(parent.kanji + ' not found.');
 						error.font({
 							x: 		'50',
@@ -111,7 +92,7 @@ AegisKanView = {
 
 	createStroke:function (path,color) {
 		if (this.animate == 'true') {
-			var stroke = this.paper.path(jQuery(path).attr('d')).drawAnimated({duration: 500, easing: '<>'});
+			var stroke = this.paper.path(jQuery(path).attr('d')).drawAnimated({duration: 500, easing: '<>'}); // Make duration adjustable and add delay arrays
 		} else {
 			var stroke = this.paper.path(jQuery(path).attr('d'));
 		}
@@ -126,23 +107,36 @@ AegisKanView = {
 		return stroke;
 	},
 
-	// createHover:function(stroke) {
-
-	// },
-
-	// createHovers:function(strokes) {
-
-	// },
 
 	// Core drawing function
 	drawKanji:function() {
 		var parent = this;
 		this.paper.clear(); //Clear the SVG() object
-		//         Raphael.getColor.reset();
 		var groups = jQuery(this.xml).find('svg > g > g > g');
-		jQuery(this.xml).find('path').each(function () {
+		jQuery(this.xml).find('path').each(function () { // $Each() callback function
 			var color = parent.color;
 			var stroke = parent.createStroke(this,color)
 		});
 	}
 };
+
+
+// Credit to:
+/**
+ * Copyright (C) 2012 Axel Bodart.
+ *
+ * This work is distributed under the conditions of the Creative Commons
+ * Attribution-Share Alike 3.0 Licence. This means you are free:
+ * to Share - to copy, distribute and transmit the work
+ * to Remix - to adapt the work
+
+ * Under the following conditions:
+ * * Attribution. You must attribute the work by stating your use of KanjiVG in
+ *    your own copyright header and linking to KanjiVG's website
+ *    (http://kanjivg.tagaini.net)
+ * * Share Alike. If you alter, transform, or build upon this work, you may
+ *    distribute the resulting work only under the same or similar license to this
+ *    one.
+ *
+ * See http://creativecommons.org/licenses/by-sa/3.0/ for more details.
+ */
