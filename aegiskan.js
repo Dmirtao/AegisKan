@@ -107,6 +107,7 @@ AegisKanView = {
 		stroke['initColor'] = color;
 		stroke.attr({
 			'stroke':color,
+			'fill':'none',
 			'stroke-width':this.strokeWidth,
 			'stroke-linecap':'round',
 			'stroke-linejoin':'round'
