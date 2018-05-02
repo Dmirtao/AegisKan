@@ -125,6 +125,7 @@ AegisKanView = {
 		var dur = parent.animateTime;
 		this.paper.clear(); //Clear the SVG() object
 		var groups = jQuery(this.xml).find('svg > g > g > g');
+		var strokeNum = jQuery(this.xml).find('path').length;
 		jQuery(this.xml).find('path').each(function (index) { // $Each() callback function
 			var color = parent.color;
 			if (parent.simDraw == 'true') {
