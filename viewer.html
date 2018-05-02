@@ -43,7 +43,8 @@
     		kanji,								// kanji
     		color,								// color
     		'false',							// animate
-    		'1000'								// animateTime
+    		'1000',								// animateTime
+    		'false'								// simDraw
     	);
     	jQuery('#viewerParams').submit(function() {
     		AegisKanView.setStrokeWidth(jQuery('#strokeWidth').val());
@@ -52,6 +53,11 @@
     			AegisKanView.setAnimate('true');
 			} else {
 				AegisKanView.setAnimate('false');
+			}
+			if (jQuery('#simDraw').prop('checked')) {
+    			AegisKanView.setSimDraw('true');
+			} else {
+				AegisKanView.setSimDraw('false');
 			}
 			AegisKanView.setAnimateTime(jQuery('#animateTime').val());
     		AegisKanView.setKanji(jQuery('#kanji').val());
@@ -103,7 +109,7 @@
 					</label>
 					<br>
 					<label class="checkbox">
-						<input type="checkbox" id="allStrokes">Draw all strokes simultaeneously
+						<input type="checkbox" id="simDraw">Draw all strokes simultaeneously
 					</label>
 				</div>
 			</div>

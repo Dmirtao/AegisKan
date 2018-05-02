@@ -8,7 +8,7 @@
 
 
 AegisKanView = {
-	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji, color, animate, animateTime) {
+	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji, color, animate, animateTime, simDraw) {
 		this.paper = new SVG(divName);
 		this.strokeWidth = strokeWidth;
 		this.fontSize = fontSize;
@@ -18,6 +18,7 @@ AegisKanView = {
 		this.color = color;
 		this.animate = animate;
 		this.animateTime = animateTime;
+		this.simDraw = simDraw;
 		this.setZoom(zoomFactor);
 		this.refreshKanji();
 	},
@@ -40,6 +41,10 @@ AegisKanView = {
 
 	setAnimateTime: function (animateTime) {
 		this.animateTime = animateTime;
+	},
+
+	setSimDraw: function (simDraw) {
+		this.simDraw = simDraw;
 	},
 
 	setKanji:function (kanji) {
@@ -122,8 +127,12 @@ AegisKanView = {
 		var groups = jQuery(this.xml).find('svg > g > g > g');
 		jQuery(this.xml).find('path').each(function (index) { // $Each() callback function
 			var color = parent.color;
-			var delay = index*dur;
-			var stroke = parent.createStroke(this,color,delay)
+			if (parent.simDraw == 'true') {
+				var stroke = parent.createStroke(this,color,0)
+			} else {
+				var delay = index*dur;
+				var stroke = parent.createStroke(this,color,delay)
+			}
 		});
 	}
 };
