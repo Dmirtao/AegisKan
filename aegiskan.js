@@ -100,10 +100,9 @@ AegisKanView = {
 		/* body... */
 	},
 
-	createStroke:function (path,color,delayIn) {
-		var dur = this.animateTime;
+	createStroke:function (path,color,duration,delayIn) {
 		if (this.animate == 'true') {
-			var stroke = this.paper.path(jQuery(path).attr('d')).drawAnimated({duration: dur, easing: '<>', delay: delayIn}); // Make duration adjustable and add delay arrays
+			var stroke = this.paper.path(jQuery(path).attr('d')).drawAnimated({duration: duration, easing: '<>', delay: delayIn}); // Make duration adjustable and add delay arrays
 		} else {
 			var stroke = this.paper.path(jQuery(path).attr('d'));
 		}
@@ -122,17 +121,21 @@ AegisKanView = {
 	// Core drawing function
 	drawKanji:function() {
 		var parent = this;
-		var dur = parent.animateTime;
+		var animTime = parent.animateTime;
+		var time = 0;
 		this.paper.clear(); //Clear the SVG() object
 		var groups = jQuery(this.xml).find('svg > g > g > g');
 		var strokeNum = jQuery(this.xml).find('path').length;
 		jQuery(this.xml).find('path').each(function (index) { // $Each() callback function
 			var color = parent.color;
+			var length = this.getTotalLength();
+			var dur = animTime;
 			if (parent.simDraw == 'true') {
-				var stroke = parent.createStroke(this,color,0)
+				var stroke = parent.createStroke(this,color,dur,0)
 			} else {
-				var delay = index*dur;
-				var stroke = parent.createStroke(this,color,delay)
+				var delay = dur*index;
+				var stroke = parent.createStroke(this,color,dur,delay)
+				time = time + dur;
 			}
 		});
 	}
