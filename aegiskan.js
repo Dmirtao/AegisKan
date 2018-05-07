@@ -8,8 +8,10 @@
 
 
 AegisKanView = {
-	initialize:function (divName, strokeWidth, fontSize, zoomFactor, kanji, color, animate, animateTime, simDraw) {
-		this.paper = new SVG(divName);
+	initialize:function (divName, frameDim, strokeWidth, fontSize, zoomFactor, kanji, color, animate, animateTime, simDraw) {
+		this.canvas = new SVG(divName);
+		this.viewbox = this.canvas.viewbox();
+		this.frameDim = frameDim;
 		this.strokeWidth = strokeWidth;
 		this.fontSize = fontSize;
 		this.zoomFactor = zoomFactor;
@@ -19,12 +21,19 @@ AegisKanView = {
 		this.animate = animate;
 		this.animateTime = animateTime;
 		this.simDraw = simDraw;
+		this.setFrameDim(frameDim);
 		this.setZoom(zoomFactor);
 		this.refreshKanji();
 	},
 	setZoom:function (zoomFactor) {
-		var dim = 109 * zoomFactor; // Fix this oddity
-		this.paper = this.paper.viewbox(0,0,dim,dim);
+		var percent = (zoomFactor/100);
+		var dim = 109*(1/percent); // A single Kanji.svg has 109x109 dimension
+		this.canvas = this.canvas.viewbox(0,0,dim,dim);
+	},
+
+	setFrameDim:function(frameDim) {
+		this.canvas.attr('height',frameDim);
+		this.canvas.attr('width',frameDim);
 	},
 
 	setStrokeWidth:function (strokeWidth) {
@@ -60,14 +69,16 @@ AegisKanView = {
 	refreshKanji:function () {
 		if (this.fetchNeeded && this.kanji != "") { 
 			var parent = this;
-			this.paper.clear() ; //Clear the SVG() object. Make this work properly even when nothing is drawn
-			var loader = this.paper.text("Loading" + this.kanji);
+			this.canvas.clear() ; //Clear the SVG() object. Make this work properly even when nothing is drawn
+			var loader = this.canvas.text("Loading" + this.kanji);
+			var fontPos = Math.round(this.frameDim/50);
+			var fontSize = Math.round(this.frameDim/30);
 			loader.font({
-				x: 		'50',
-				y: 		'50',
+				x: 		fontPos.toString(),
+				y: 		fontPos.toString(),
 				fill: 	'black',
 				family: 'sans-serif',
-				size: 	'18',
+				size: 	fontSize.toString(),
 				anchor: 'start'
 			});
 			jQuery.ajax({
@@ -80,14 +91,14 @@ AegisKanView = {
 				},
 				statusCode:{
 					404:function() {
-						// this.paper.clear(); // Make this clear() work even when nothing is drawn
-						var error = parent.paper.text(parent.kanji + ' not found.');
+						parent.canvas.clear(); // Make this clear() work even when nothing is drawn
+						var error = parent.canvas.text(parent.kanji + ' not found.');
 						error.font({
-							x: 		'50',
-							y: 		'50',
+							x: 		fontPos.toString(),
+							y: 		fontPos.toString(),
 							fill: 	'black',
 							family: 'sans-serif',
-							size: 	'18',
+							size: 	fontSize.toString(),
 							anchor: 'start'
 						})
 					}
@@ -102,17 +113,19 @@ AegisKanView = {
 
 	createStroke:function (path,color,duration,delayIn) {
 		if (this.animate == 'true') {
-			var stroke = this.paper.path(jQuery(path).attr('d')).drawAnimated({duration: duration, easing: '<>', delay: delayIn}); // Make duration adjustable and add delay arrays
+			var stroke = this.canvas.path(jQuery(path).attr('d')).drawAnimated({duration: duration, easing: '<>', delay: delayIn}); // Make duration adjustable and add delay arrays
+			// BUG on Firefox, shows initial dot. 
+			// WE CAN ACCESS STROKE.FX!
 		} else {
-			var stroke = this.paper.path(jQuery(path).attr('d'));
+			var stroke = this.canvas.path(jQuery(path).attr('d'));
 		}
-		stroke['initColor'] = color;
+		stroke['initColor'] = 'none';
 		stroke.attr({
 			'stroke':color,
 			'fill':'none',
 			'stroke-width':this.strokeWidth,
 			'stroke-linecap':'round',
-			'stroke-linejoin':'round'
+			'stroke-linejoin':'round',
 		});
 		return stroke;
 	},
@@ -123,22 +136,23 @@ AegisKanView = {
 		var parent = this;
 		var animTime = parent.animateTime;
 		var time = 0;
-		this.paper.clear(); //Clear the SVG() object
+		this.canvas.clear(); //Clear the SVG() object
 		var groups = jQuery(this.xml).find('svg > g > g > g');
 		var strokeNum = jQuery(this.xml).find('path').length;
 		jQuery(this.xml).find('path').each(function (index) { // $Each() callback function
 			var color = parent.color;
 			var length = this.getTotalLength();
 			var dur = animTime;
+			var delay = dur*index;
 			if (parent.simDraw == 'true') {
 				var stroke = parent.createStroke(this,color,dur,0)
 			} else {
-				var delay = dur*index;
-				var stroke = parent.createStroke(this,color,dur,delay)
-				time = time + dur;
+					var stroke = parent.createStroke(this,color,dur,delay);
+					var sit = stroke.fx.situation; //Tell each stroke to be hidden before start
+					time = time + dur;
 			}
 		});
-	}
+	},
 };
 
 

@@ -1,15 +1,24 @@
+/* DEPRECATED, switched to Bootstrap host */
+
+
 body {
 	font-family: sans-serif;
-	background-color: #eeeeee;
-
-
+	background-color: #dddddd;
 }
 
-#aegisKanView {
+/* Selects SVG elements that are children of/ withing aegisKanView <div> */
+#aegisKanView > svg{
 	border: 3px solid #222222;
 	border-radius: 5px;
 	padding: 5px;
 	margin:  3px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.viewerParams {
+	display: flex;
 }
 
 h1{

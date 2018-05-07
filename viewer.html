@@ -2,41 +2,45 @@
 <html>
 <head>
 	<title>Viewer</title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="lightStyle.css">
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/	bootstrap.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.4/svg.js" ></script>
 	<script type="text/javascript" src="svg.path.js" ></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="aegiskan.js" ></script>
 </head>
 <body>
+	<script type="text/javascript"> 
+		jQuery(document).ready(function () {
+			function urldecode(str) {
+				return decodeURIComponent((str + '').replace(/\+/g, '%20'));
+			}
 
-<script type="text/javascript"> 
-    jQuery(document).ready(function () {
-    	function urldecode(str) {
-    		return decodeURIComponent((str + '').replace(/\+/g, '%20'));
-    	}
+			function getUrlVars() {
+				var vars = [], hash;
+				var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+				for (var i = 0; i < hashes.length; i++) {
+					hash = hashes[i].split('=');
+					vars.push(hash[0]);
+					vars[hash[0]] = urldecode(hash[1]);
+				}
+				return vars;
+			}
 
-    	function getUrlVars() {
-    		var vars = [], hash;
-    		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    		for (var i = 0; i < hashes.length; i++) {
-    			hash = hashes[i].split('=');
-    			vars.push(hash[0]);
-    			vars[hash[0]] = urldecode(hash[1]);
-    		}
-    		return vars;
-    	}
-
-    	var kanji = getUrlVars()["kanji"];
-    	var color = new SVG.Color('#000000');
-    	if (kanji == null) {
-    		kanji = jQuery('#kanji').val();
-    	} else {
-    		jQuery('#kanji').val(kanji);
-    	}
-    	AegisKanView.initialize(
+			var kanji = getUrlVars()["kanji"];
+			var color = new SVG.Color('#000000');
+			if (kanji == null) {
+				kanji = jQuery('#kanji').val();
+			} else {
+				jQuery('#kanji').val(kanji);
+			}
+			AegisKanView.initialize(
     		"aegisKanView",						// divName
+    		"400",								// frameDim
     		jQuery('#strokeWidth').val(),		// strokeWidth
     		12,									// fontSize
     		jQuery('#zoomFactor').val(),		// zoomFactor
@@ -45,36 +49,43 @@
     		'false',							// animate
     		'1000',								// animateTime
     		'false'								// simDraw
-    	);
-    	jQuery('#viewerParams').submit(function() {
-    		AegisKanView.setStrokeWidth(jQuery('#strokeWidth').val());
-    		AegisKanView.setZoom(jQuery('#zoomFactor').val());
-    		if (jQuery('#animate').prop('checked')) {
-    			AegisKanView.setAnimate('true');
-			} else {
-				AegisKanView.setAnimate('false');
-			}
-			if (jQuery('#simDraw').prop('checked')) {
-    			AegisKanView.setSimDraw('true');
-			} else {
-				AegisKanView.setSimDraw('false');
-			}
-			AegisKanView.setAnimateTime(jQuery('#animateTime').val());
-    		AegisKanView.setKanji(jQuery('#kanji').val());
-    		AegisKanView.refreshKanji();
-    		return false;
-    	});
-    });
-</script>
-
-	<h1 style="text-align: center;"><b>AegisKan</b></h1>
-	
+    		);
+			jQuery('#viewerParams').submit(function() {
+				AegisKanView.setFrameDim(jQuery('#frameDim').val());
+				AegisKanView.setStrokeWidth(jQuery('#strokeWidth').val());
+				AegisKanView.setZoom(jQuery('#zoomFactor').val());
+				if (jQuery('#animate').prop('checked')) {
+					AegisKanView.setAnimate('true');
+				} else {
+					AegisKanView.setAnimate('false');
+				}
+				if (jQuery('#simDraw').prop('checked')) {
+					AegisKanView.setSimDraw('true');
+				} else {
+					AegisKanView.setSimDraw('false');
+				}
+				AegisKanView.setAnimateTime(jQuery('#animateTime').val());
+				AegisKanView.setKanji(jQuery('#kanji').val());
+				AegisKanView.refreshKanji();
+				return false;
+			});
+		});
+	</script>
+	<div class="container-fluid">
+		<h1 style="text-align: center;"><b>AegisKan</b></h1>
+	</div>
 	<!--  Paraemeter settings block -->
 	<form id="viewerParams" action="#" class="form-horizontal">
 		<fieldset>
 			<div class="control-group">
+				<label class="control-label" for="frameDim">Frame Dimension (px)</label>
+				<div class="controls docs-input-sizes">
+					<input class="span3" type="text" value="400" id="frameDim" placeholder="400">
+				</div>
+			</div>
+			<br>
+			<div class="control-group">
 				<label class="control-label" for="kanji">Kanji</label>
-				
 				<div class="controls docs-input-sizes">
 					<input class="span3" type="text" value="" id="kanji" placeholder="e.g. 勝">
 				</div>
@@ -90,7 +101,7 @@
 			<div class="control-group">
 				<label class="control-label" for="zoomFactor">Zoom Factor</label>
 				<div class="controls docs-input-sizes">
-					<input class="span3" type="text" value="3" id="zoomFactor" placeholder="3">
+					<input class="span3" type="text" value="100" id="zoomFactor" placeholder="100">
 				</div>
 			</div>
 			<br>
