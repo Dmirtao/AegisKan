@@ -24,7 +24,9 @@
 				dashoffset:    length
 			});
 
-			var fx = this.animate(options.duration, options.easing, options.delay);
+			var fx = this.animate(options.duration, options.easing, options.delay).after(function (sit) {
+				/* body... */
+			});
 
 			fx.stroke({
 				dashoffset: 0
