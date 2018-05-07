@@ -181,7 +181,6 @@ AegisKanView = {
 				var stroke = parent.createStroke(this,color,dur,0)
 			} else {
 					var stroke = parent.createStroke(this,color,dur,delay);
-					var sit = stroke.fx.situation; //Tell each stroke to be hidden before start
 					time = time + dur;
 			}
 		});
