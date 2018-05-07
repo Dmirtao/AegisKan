@@ -5,6 +5,37 @@
  /**
 * Dependencies: jQuery, SVG.js, KanjiVG
  */
+(function() {
+
+	var slice = Function.prototype.call.bind(Array.prototype.slice);
+
+	SVG.extend(SVG.Path, {
+		drawAnimated: function(options){
+			options = options || {};
+			options.duration = options.duration || '1000';
+			options.easing = options.easing || '<>';
+			options.delay = options.delay || 0;
+			
+			var length = this.length();
+
+			this.stroke({
+				width:         2,
+				dasharray:     length + ' ' + length,
+				dashoffset:    length
+			});
+
+			var fx = this.animate(options.duration, options.easing, options.delay);
+
+			fx.stroke({
+				dashoffset: 0
+			});	
+			return this;
+		},
+	});
+}).call(this);
+
+
+
 
 
 AegisKanView = {
