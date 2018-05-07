@@ -7,3 +7,6 @@ Uses Aegisub and .ass files to generate draw timings.
 - Svg.js
 - Svg.path.js
 - jQuery
+
+# Applications
+- [Single Kanji viewer](/viewer.html)
