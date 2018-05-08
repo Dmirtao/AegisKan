@@ -16,16 +16,23 @@
 			options.easing = options.easing || '<>';
 			options.delay = options.delay || 0;
 			
+			this.colorIn = options.colorIn || '#000000';
+
 			var length = this.length();
 
 			this.stroke({
 				width:         2,
 				dasharray:     length + ' ' + length,
-				dashoffset:    length
+				dashoffset:    length,
 			});
 
-			var fx = this.animate(options.duration, options.easing, options.delay).after(function (sit) {
-				/* body... */
+			var fx = this.animate(options.duration, options.easing, options.delay).during(function (pos, morph, eased, situation) {
+				if (pos > 0) {
+					this.stroke({
+						color:  this.colorIn,
+					});
+				}
+				// ^ Fix to eliminate unintentional black spots in inconsistent browser renderings of 0 length SVG paths.
 			});
 
 			fx.stroke({
@@ -146,17 +153,16 @@ AegisKanView = {
 
 	createStroke:function (path,color,duration,delayIn) {
 		if (this.animate == 'true') {
-			var stroke = this.canvas.path(jQuery(path).attr('d')).drawAnimated({duration: duration, easing: '<>', delay: delayIn}); // Make duration adjustable and add delay arrays
-			// BUG on Firefox, shows initial dot. 
-			// WE CAN ACCESS STROKE.FX!
+			var stroke = this.canvas.path(jQuery(path).attr('d')).drawAnimated({duration: duration, easing: '<>', delay: delayIn, colorIn: color}); 
+			// Make duration adjustable and add delay arrays
 		} else {
 			var stroke = this.canvas.path(jQuery(path).attr('d'));
 		}
 		stroke['initColor'] = 'none';
 		stroke.attr({
-			'stroke':color,
+			'stroke':'none',
 			'fill':'none',
-			'stroke-width':this.strokeWidth,
+			'stroke-width': this.strokeWidth,
 			'stroke-linecap':'round',
 			'stroke-linejoin':'round',
 		});
