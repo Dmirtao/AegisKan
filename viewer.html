@@ -70,64 +70,66 @@
 		});
 	</script>
 	<div class="container-fluid">
-		<h1 style="text-align: center;"><b>AegisKan</b></h1>
+		<h1 style="text-align: left;"><b>AegisKan</b></h1>
+		<!--  Paraemeter settings block -->
+		<div class="row">
+			<div class="col-sm-6 col-md-3" style="border: 4px black solid; border-radius: 5px">
+				<form id="viewerParams" action="#" class="form-horizontal">
+					<fieldset>
+						<div class="control-group">
+							<label class="control-label" for="frameDim">Frame Dimension (px)</label>
+							<div class="controls docs-input-sizes">
+								<input class="form-control" type="text" value="400" id="frameDim" placeholder="400">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="kanji">Kanji</label>
+							<div class="controls docs-input-sizes">
+								<input class="form-control" type="text" value="" id="kanji" placeholder="e.g. 勝">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="strokeWidth">Stroke Width</label>
+							<div class="controls docs-input-sizes">
+								<input class="form-control" type="text" value="3" id="strokeWidth" placeholder="3">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="zoomFactor">Zoom Factor</label>
+							<div class="controls docs-input-sizes">
+								<input class="form-control" type="text" value="100" id="zoomFactor" placeholder="100">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="animateTime">Animation Time per Stroke (ms)</label>
+							<div class="controls docs-input-sizes">
+								<input class="form-control" type="text" value="1000" id="animateTime" placeholder="1000">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" id="optionsCheckboxes">Options</label>
+							<div class="controls">
+								<label class="checkbox">
+									<input type="checkbox" id="animate">Animate Stroke Drawing
+								</label>
+								<br>
+								<label class="checkbox">
+									<input type="checkbox" id="simDraw">Draw all strokes simultaeneously
+								</label>
+							</div>
+						</div>
+						<div class="form-actions">
+							<input type="submit" class="btn btn-primary" value="Redraw">&nbsp;
+							<button type="reset" class="btn btn-info">Reset</button>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<div id="aegisKanView" class="col-sm-6 col-md-9" style="border: 4px black solid; border-radius: 5px; display: flex; justify-content: center; align-items: center;">
+
+			</div>
+		</div>
 	</div>
-	<!--  Paraemeter settings block -->
-	<form id="viewerParams" action="#" class="form-horizontal">
-		<fieldset>
-			<div class="control-group">
-				<label class="control-label" for="frameDim">Frame Dimension (px)</label>
-				<div class="controls docs-input-sizes">
-					<input class="span3" type="text" value="400" id="frameDim" placeholder="400">
-				</div>
-			</div>
-			<br>
-			<div class="control-group">
-				<label class="control-label" for="kanji">Kanji</label>
-				<div class="controls docs-input-sizes">
-					<input class="span3" type="text" value="" id="kanji" placeholder="e.g. 勝">
-				</div>
-			</div>
-			<br>
-			<div class="control-group">
-				<label class="control-label" for="strokeWidth">Stroke Width</label>
-				<div class="controls docs-input-sizes">
-					<input class="span3" type="text" value="3" id="strokeWidth" placeholder="3">
-				</div>
-			</div>
-			<br>
-			<div class="control-group">
-				<label class="control-label" for="zoomFactor">Zoom Factor</label>
-				<div class="controls docs-input-sizes">
-					<input class="span3" type="text" value="100" id="zoomFactor" placeholder="100">
-				</div>
-			</div>
-			<br>
-			<div class="control-group">
-				<label class="control-label" for="animateTime">Animation Time per Stroke (ms)</label>
-				<div class="controls docs-input-sizes">
-					<input class="span3" type="text" value="1000" id="animateTime" placeholder="1000">
-				</div>
-			</div>
-			<br>
-			<div class="control-group">
-				<label class="control-label" id="optionsCheckboxes">Options</label>
-				<div class="controls">
-					<label class="checkbox">
-						<input type="checkbox" id="animate">Animate Stroke Drawing
-					</label>
-					<br>
-					<label class="checkbox">
-						<input type="checkbox" id="simDraw">Draw all strokes simultaeneously
-					</label>
-				</div>
-			</div>
-			<div class="form-actions">
-				<input type="submit" class="btn btn-primary" value="Redraw">&nbsp;
-				<button type="reset" class="btn btn-info">Reset</button>
-			</div>
-		</fieldset>
-	</form>
-	<div id="aegisKanView">	</div>
+
 </body>
 </html>

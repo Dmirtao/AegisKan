@@ -4,7 +4,7 @@
 
  /**
 * Dependencies: jQuery, SVG.js, KanjiVG
- */
+*/
 (function() {
 
 	var slice = Function.prototype.call.bind(Array.prototype.slice);
@@ -155,17 +155,24 @@ AegisKanView = {
 		if (this.animate == 'true') {
 			var stroke = this.canvas.path(jQuery(path).attr('d')).drawAnimated({duration: duration, easing: '<>', delay: delayIn, colorIn: color}); 
 			// Make duration adjustable and add delay arrays
+			stroke.attr({
+				'stroke':'none',
+				'fill':'none',
+				'stroke-width': this.strokeWidth,
+				'stroke-linecap':'round',
+				'stroke-linejoin':'round',
+			});
 		} else {
 			var stroke = this.canvas.path(jQuery(path).attr('d'));
+			stroke.attr({
+				'stroke': color,
+				'fill':'none',
+				'stroke-width': this.strokeWidth,
+				'stroke-linecap':'round',
+				'stroke-linejoin':'round',
+			});
 		}
-		stroke['initColor'] = 'none';
-		stroke.attr({
-			'stroke':'none',
-			'fill':'none',
-			'stroke-width': this.strokeWidth,
-			'stroke-linecap':'round',
-			'stroke-linejoin':'round',
-		});
+
 		return stroke;
 	},
 
@@ -186,8 +193,8 @@ AegisKanView = {
 			if (parent.simDraw == 'true') {
 				var stroke = parent.createStroke(this,color,dur,0)
 			} else {
-					var stroke = parent.createStroke(this,color,dur,delay);
-					time = time + dur;
+				var stroke = parent.createStroke(this,color,dur,delay);
+				time = time + dur;
 			}
 		});
 	},
