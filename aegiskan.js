@@ -6,26 +6,19 @@
 * Dependencies: jQuery, SVG.js, KanjiVG
 */
 (function() {
-
-	var slice = Function.prototype.call.bind(Array.prototype.slice);
-
 	SVG.extend(SVG.Path, {
 		drawAnimated: function(options){
 			options = options || {};
 			options.duration = options.duration || '1000';
 			options.easing = options.easing || '<>';
 			options.delay = options.delay || 0;
-			
 			this.colorIn = options.colorIn || '#000000';
-
 			var length = this.length();
-
 			this.stroke({
 				width:         2,
 				dasharray:     length + ' ' + length,
 				dashoffset:    length,
 			});
-
 			var fx = this.animate(options.duration, options.easing, options.delay).during(function (pos, morph, eased, situation) {
 				if (pos > 0) {
 					this.stroke({
@@ -34,7 +27,6 @@
 				}
 				// ^ Fix to eliminate unintentional black spots in inconsistent browser renderings of 0 length SVG paths.
 			});
-
 			fx.stroke({
 				dashoffset: 0
 			});	
@@ -42,10 +34,6 @@
 		},
 	});
 }).call(this);
-
-
-
-
 
 AegisKanView = {
 	initialize:function (divName, frameDim, strokeWidth, fontSize, zoomFactor, kanji, color, animate, animateTime, simDraw) {
@@ -67,49 +55,48 @@ AegisKanView = {
 	},
 	setZoom:function (zoomFactor) {
 		var percent = (zoomFactor/100);
-		var dim = 109*(1/percent); // A single Kanji.svg has 109x109 dimension
-		this.canvas = this.canvas.viewbox(0,0,dim,dim);
-	},
+		var dim = 109*(1/percent);
+		 // A single Kanji.svg has 109x109 dimension
+		 this.canvas = this.canvas.viewbox(0,0,dim,dim);
+		},
 
-	setFrameDim:function(frameDim) {
-		this.canvas.attr('height',frameDim);
-		this.canvas.attr('width',frameDim);
-	},
+		setFrameDim:function(frameDim) {
+			this.canvas.attr('height',frameDim);
+			this.canvas.attr('width',frameDim);
+		},
 
-	setStrokeWidth:function (strokeWidth) {
-		this.strokeWidth = strokeWidth;
-	},
+		setStrokeWidth:function (strokeWidth) {
+			this.strokeWidth = strokeWidth;
+		},
 
-	setFontSize:function (fontSize) {
-		this.fontSize = fontSize;
-	},
+		setFontSize:function (fontSize) {
+			this.fontSize = fontSize;
+		},
 
-	setAnimate: function(animate) {
-		this.animate = animate;
-	},
+		setAnimate: function(animate) {
+			this.animate = animate;
+		},
 
-	setAnimateTime: function (animateTime) {
-		this.animateTime = animateTime;
-	},
+		setAnimateTime: function (animateTime) {
+			this.animateTime = animateTime;
+		},
 
-	setSimDraw: function (simDraw) {
-		this.simDraw = simDraw;
-	},
+		setSimDraw: function (simDraw) {
+			this.simDraw = simDraw;
+		},
 
-	setKanji:function (kanji) {
-		if (kanji != this.kanji && kanji != '' && kanji != undefined) {
-			this.kanji = kanji;
-			this.fetchNeeded = true;
-		}
-	},
-
-
+		setKanji:function (kanji) {
+			if (kanji != this.kanji && kanji != '' && kanji != undefined) {
+				this.kanji = kanji;
+				this.fetchNeeded = true;
+			}
+		},
 
 	// Core querying code
 	refreshKanji:function () {
 		if (this.fetchNeeded && this.kanji != "") { 
 			var parent = this;
-			this.canvas.clear() ; //Clear the SVG() object. Make this work properly even when nothing is drawn
+			this.canvas.clear() ; 
 			var loader = this.canvas.text("Loading" + this.kanji);
 			var fontPos = Math.round(this.frameDim/50);
 			var fontSize = Math.round(this.frameDim/30);
@@ -131,7 +118,7 @@ AegisKanView = {
 				},
 				statusCode:{
 					404:function() {
-						parent.canvas.clear(); // Make this clear() work even when nothing is drawn
+						parent.canvas.clear(); 
 						var error = parent.canvas.text(parent.kanji + ' not found.');
 						error.font({
 							x: 		fontPos.toString(),
@@ -148,7 +135,6 @@ AegisKanView = {
 		else {
 			this.drawKanji();
 		}
-		/* body... */
 	},
 
 	createStroke:function (path,color,duration,delayIn) {
@@ -172,20 +158,18 @@ AegisKanView = {
 				'stroke-linejoin':'round',
 			});
 		}
-
 		return stroke;
 	},
-
 
 	// Core drawing function
 	drawKanji:function() {
 		var parent = this;
 		var animTime = parent.animateTime;
 		var time = 0;
-		this.canvas.clear(); //Clear the SVG() object
+		this.canvas.clear();
 		var groups = jQuery(this.xml).find('svg > g > g > g');
 		var strokeNum = jQuery(this.xml).find('path').length;
-		jQuery(this.xml).find('path').each(function (index) { // $Each() callback function
+		jQuery(this.xml).find('path').each(function (index) { 
 			var color = parent.color;
 			var length = this.getTotalLength();
 			var dur = animTime;
