@@ -7,7 +7,7 @@ Hosted at (https://dmirtao.github.io/AegisKan/)
 
 # Applications
 - [Single Kanji viewer](/viewer.html)
-
+- [Multiple Kanji Drawing](/multiViewer.html)
 
 # Credits
 - KanjiVG (http://kanjivg.tagaini.net/index.html)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Single Viewer</title>
+	<title>Multi Viewer</title>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/	bootstrap.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.4/svg.js" ></script>
@@ -35,8 +35,8 @@
 			} else {
 				jQuery('#kanji').val(kanji);
 			}
-			AegisKanSingleView.initialize(
-    		"AegisKanSingleView",				// divName
+			AegisKanMultiView.initialize(
+    		"AegisKanMultiView",						// divName
     		"400",								// frameDim
     		jQuery('#strokeWidth').val(),		// strokeWidth
     		12,									// fontSize
@@ -48,28 +48,28 @@
     		'false'								// simDraw
     		);
 			jQuery('#viewerParams').submit(function() {
-				AegisKanSingleView.setFrameDim(jQuery('#frameDim').val());
-				AegisKanSingleView.setStrokeWidth(jQuery('#strokeWidth').val());
-				AegisKanSingleView.setZoom(jQuery('#zoomFactor').val());
+				AegisKanMultiView.setFrameDim(jQuery('#frameDim').val());
+				AegisKanMultiView.setStrokeWidth(jQuery('#strokeWidth').val());
+				AegisKanMultiView.setZoom(jQuery('#zoomFactor').val());
 				if (jQuery('#animate').prop('checked')) {
-					AegisKanSingleView.setAnimate('true');
-					AegisKanSingleView.setSimDraw('false');
+					AegisKanMultiView.setAnimate('true');
+					AegisKanMultiView.setSimDraw('false');
 				} else if (jQuery('#simDraw').prop('checked')) {
-					AegisKanSingleView.setAnimate('true');
-					AegisKanSingleView.setSimDraw('true');
+					AegisKanMultiView.setAnimate('true');
+					AegisKanMultiView.setSimDraw('true');
 				} else {
-					AegisKanSingleView.setAnimate('false');
-					AegisKanSingleView.setSimDraw('false');
+					AegisKanMultiView.setAnimate('false');
+					AegisKanMultiView.setSimDraw('false');
 				}
-				AegisKanSingleView.setAnimateTime(jQuery('#animateTime').val());
-				AegisKanSingleView.setKanji(jQuery('#kanji').val());
-				AegisKanSingleView.refreshKanji();
+				AegisKanMultiView.setAnimateTime(jQuery('#animateTime').val());
+				AegisKanMultiView.setKanji(jQuery('#kanji').val());
+				AegisKanMultiView.refreshKanji();
 				return false;
 			});
 		});
 	</script>
 	<div class="container-fluid">
-		<h1 style="text-align: left;"><b>AegisKan: Single Viewer</b></h1>
+		<h1 style="text-align: left;"><b>AegisKan: Multi Viewer</b></h1>
 		<!--  Paraemeter settings block -->
 		<div class="row">
 			<div class="col-sm-6 col-md-3" style="border: 4px black solid; border-radius: 5px">
@@ -124,17 +124,17 @@
 							</div>
 						</div>
 						<div class="form-actions">
-							<input type="submit" class="btn btn-primary" value="Redraw">&nbsp;
-							<button type="reset" class="btn btn-info">Reset</button>
-						</div>
-					</fieldset>
-				</form>
-			</div>
-			<div id="AegisKanSingleView" class="col-sm-6 col-md-9" style="border: 4px black solid; border-radius: 5px; display: flex; justify-content: center; align-items: center;">
+						<input type="submit" class="btn btn-primary" value="Redraw">&nbsp;
+						<button type="reset" class="btn btn-info">Reset</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<div id="AegisKanMultiView" class="col-sm-6 col-md-9" style="border: 4px black solid; border-radius: 5px; display: flex; justify-content: center; align-items: center;">
 
-			</div>
 		</div>
 	</div>
+</div>
 
 </body>
 </html>
