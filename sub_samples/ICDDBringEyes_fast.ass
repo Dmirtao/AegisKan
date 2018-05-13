@@ -14,10 +14,8 @@ Last Style Storage: Default
 Audio File: E:/Music/Imperial Circus Dead Decadance/Imperial Circus Dead Decadence - FàÉF¥òpâ½pé¦pâ¦pâüpâPpâ¦pÇüS+ìµ¡+µ¼¦pü«tî+µÑ+s¦ºpÇé - 02 sÜ«s¦ÄBRING+tP¦EYES=µ¡+DEATH+T+ÄINVITE.mp3
 Video File: ?dummy:60.000000:20000:1920:1080:47:163:254:
 Video AR Value: 1.777778
-Video Zoom Percent: 0.250000
-Scroll Position: 24
-Active Line: 36
-Video Position: 8385
+Video Zoom Percent: 0.500000
+Video Position: 13765
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -46,7 +44,7 @@ Dialogue: 0,0:01:07.72,0:01:09.40,Large Gothic,,0,0,0,,{\k39}我{\k46}穢{\k83}�
 Dialogue: 0,0:01:12.16,0:01:12.80,Large Gothic,,0,0,0,,{\k21}揺{\k21}れ{\k22}る
 Dialogue: 0,0:01:12.80,0:01:16.02,Large Gothic,,0,0,0,,{\k48}暁{\k19}の{\k14}日{\k36}に{\k18}此{\k21}の{\k22}身{\k25}を{\k33}焦{\k43}が{\k43}し
 Dialogue: 0,0:01:16.02,0:01:19.54,Large Gothic,,0,0,0,,{\k46}叫{\k18}び{\k36}続{\k32}け{\k22}て{\k19}い{\k11}た{\k88}言{\k42}葉{\k38}は　
-Dialogue: 0,0:01:19.54,0:01:22.62,Large Gothic,,0,0,0,,{\k41}嗚{\k81}呼  {\k41}憧{\k15}れ{\k57}妬{\k37}い{\k36}て
+Dialogue: 0,0:01:19.54,0:01:22.62,Large Gothic,,0,0,0,,{\k41}嗚{\k81}呼,  {\k41}憧{\k15}れ{\k57}妬{\k37}い{\k36}て
 Dialogue: 0,0:01:22.62,0:01:26.42,Large Gothic,,0,0,0,,{\k78}自{\k80}ら{\k61}鎖{\k38}を{\k32}抱{\k19}い{\k72}て
 Dialogue: 0,0:01:26.42,0:01:29.73,Large Gothic,,0,0,0,,{\k36}唐{\k30}紅{\k16}に {\k36}染{\k26}ま{\k16}り{\k19}落{\k24}ち{\k46}て{\k40}ゆ{\k42}く
 Dialogue: 0,0:01:29.73,0:01:34.27,Large Gothic,,0,0,0,,{\k47}宵{\k39}闇{\k12}に{\k76}輝{\k21}く{\k85}明{\k87}星{\k87}が
@@ -68,8 +66,7 @@ Dialogue: 0,0:02:21.50,0:02:24.22,Large Gothic,,0,0,0,,喜びを捨てた害悪�
 Dialogue: 0,0:02:24.22,0:02:24.82,Large Gothic,,0,0,0,,{\k20}呉{\k20}れ{\k20}る
 Dialogue: 0,0:02:24.82,0:02:27.92,Large Gothic,,0,0,0,,言葉の中に意味を見いだせず　
 Dialogue: 0,0:02:27.92,0:02:31.58,Large Gothic,,0,0,0,,呪い続けていた思いは
-Dialogue: 0,0:02:31.58,0:02:32.74,Large Gothic,,0,0,0,,{\k36}嗚{\k80}呼
-Dialogue: 0,0:02:32.74,0:02:34.59,Large Gothic,,0,0,0,,焦れ焼いて
+Dialogue: 0,0:02:31.58,0:02:34.59,Large Gothic,,0,0,0,,{\k36}嗚{\k80}呼, 焦れ焼いて
 Dialogue: 0,0:02:34.59,0:02:38.47,Large Gothic,,0,0,0,,自ら痛みを抱いて
 Dialogue: 0,0:02:38.47,0:02:41.72,Large Gothic,,0,0,0,,愚鈍の涙零れ堕ちてゆく
 Dialogue: 0,0:02:41.72,0:02:46.45,Large Gothic,,0,0,0,,宵闇に輝く明星は
@@ -88,7 +85,7 @@ Dialogue: 0,0:04:39.38,0:04:41.34,Large Gothic,,0,0,0,,{\k43}裂{\k39}け{\k47}�
 Dialogue: 0,0:04:41.34,0:04:42.00,Large Gothic,,0,0,0,,{\k22}揺{\k22}れ{\k22}る
 Dialogue: 0,0:04:42.00,0:04:45.14,Large Gothic,,0,0,0,,暁の日に此の身を焦がし
 Dialogue: 0,0:04:45.14,0:04:48.70,Large Gothic,,0,0,0,,叫び続けていた言葉は
-Dialogue: 0,0:04:48.70,0:04:51.79,Large Gothic,,0,0,0,,憧れ妬いて
+Dialogue: 0,0:04:48.70,0:04:51.79,Large Gothic,,0,0,0,,嗚呼, 憧れ妬いて
 Dialogue: 0,0:04:51.79,0:04:55.66,Large Gothic,,0,0,0,,自ら鎖を抱いて
 Dialogue: 0,0:04:55.66,0:04:58.83,Large Gothic,,0,0,0,,唐紅に染まり落ちてゆく
 Dialogue: 0,0:04:58.83,0:05:03.57,Large Gothic,,0,0,0,,宵闇に輝く明星が
