@@ -11,11 +11,11 @@ PlayResY: 1080
 
 [Aegisub Project Garbage]
 Last Style Storage: Default
-Audio File: ../Music/Imperial Circus Dead Decadence - 腐蝕ルサンチマン、不死欲の猿楽座。/Imperial Circus Dead Decadence - FàÉF¥òpâ½pé¦pâ¦pâüpâPpâ¦pÇüS+ìµ¡+µ¼¦pü«tî+µÑ+s¦ºpÇé - 02 sÜ«s¦ÄBRING+tP¦EYES=µ¡+DEATH+T+ÄINVITE.mp3
+Audio File: E:/Music/Imperial Circus Dead Decadance/Imperial Circus Dead Decadence - FàÉF¥òpâ½pé¦pâ¦pâüpâPpâ¦pÇüS+ìµ¡+µ¼¦pü«tî+µÑ+s¦ºpÇé - 02 sÜ«s¦ÄBRING+tP¦EYES=µ¡+DEATH+T+ÄINVITE.mp3
 Video File: ?dummy:60.000000:20000:1920:1080:47:163:254:
 Video AR Value: 1.777778
-Video Zoom Percent: 0.375000
-Scroll Position: 26
+Video Zoom Percent: 0.250000
+Scroll Position: 24
 Active Line: 36
 Video Position: 8385
 
@@ -46,23 +46,23 @@ Dialogue: 0,0:01:07.72,0:01:09.40,Large Gothic,,0,0,0,,{\k39}我{\k46}穢{\k83}�
 Dialogue: 0,0:01:12.16,0:01:12.80,Large Gothic,,0,0,0,,{\k21}揺{\k21}れ{\k22}る
 Dialogue: 0,0:01:12.80,0:01:16.02,Large Gothic,,0,0,0,,{\k48}暁{\k19}の{\k14}日{\k36}に{\k18}此{\k21}の{\k22}身{\k25}を{\k33}焦{\k43}が{\k43}し
 Dialogue: 0,0:01:16.02,0:01:19.54,Large Gothic,,0,0,0,,{\k46}叫{\k18}び{\k36}続{\k32}け{\k22}て{\k19}い{\k11}た{\k88}言{\k42}葉{\k38}は　
-Dialogue: 0,0:01:19.54,0:01:22.62,Large Gothic,,0,0,0,,{\k41}嗚{\k81}呼{\k41}憧{\k15}れ{\k57}妬{\k37}い{\k36}て
-Dialogue: 0,0:01:22.62,0:01:26.42,Large Gothic,,0,0,0,,自ら鎖を抱いて
-Dialogue: 0,0:01:26.42,0:01:29.73,Large Gothic,,0,0,0,,唐紅に 染まり落ちてゆく
-Dialogue: 0,0:01:29.73,0:01:34.27,Large Gothic,,0,0,0,,宵闇に輝く明星が
-Dialogue: 0,0:01:34.27,0:01:38.58,Large Gothic,,0,0,0,,黄昏を喰らう
-Dialogue: 0,0:01:47.33,0:01:50.52,Large Gothic,,0,0,0,,汝らの眼に映るは夢か現か――。
+Dialogue: 0,0:01:19.54,0:01:22.62,Large Gothic,,0,0,0,,{\k41}嗚{\k81}呼  {\k41}憧{\k15}れ{\k57}妬{\k37}い{\k36}て
+Dialogue: 0,0:01:22.62,0:01:26.42,Large Gothic,,0,0,0,,{\k78}自{\k80}ら{\k61}鎖{\k38}を{\k32}抱{\k19}い{\k72}て
+Dialogue: 0,0:01:26.42,0:01:29.73,Large Gothic,,0,0,0,,{\k36}唐{\k30}紅{\k16}に {\k36}染{\k26}ま{\k16}り{\k19}落{\k24}ち{\k46}て{\k40}ゆ{\k42}く
+Dialogue: 0,0:01:29.73,0:01:34.27,Large Gothic,,0,0,0,,{\k47}宵{\k39}闇{\k12}に{\k76}輝{\k21}く{\k85}明{\k87}星{\k87}が
+Dialogue: 0,0:01:34.27,0:01:38.58,Large Gothic,,0,0,0,,{\k62}黄{\k66}昏{\k41}を{\k48}喰{\k39}ら{\k175}う
+Dialogue: 0,0:01:47.33,0:01:50.52,Large Gothic,,0,0,0,,{\k54}汝{\k14}ら{\k17}の{\k14}眼{\k10}に{\k29}映{\k12}る{\k33}は{\k33}夢{\k29}か{\k48}現{\k26}か――。
 Dialogue: 0,0:01:50.52,0:01:53.94,Large Gothic,,0,0,0,,「親愛なる心の殺戮者よ、卑猥な影に飲まれませぬよう。」
 Dialogue: 0,0:01:53.94,0:01:57.38,Large Gothic,,0,0,0,,「二つの心臓を此処へ……一つは祭り、もう一つは私に。」
 Dialogue: 0,0:01:57.38,0:02:01.01,Large Gothic,,0,0,0,,「嘘は良くないでしょう、終わるまでそうしているつもりかね？」
 Dialogue: 0,0:02:01.01,0:02:04.42,Large Gothic,,0,0,0,, 「悲しいことだが、勝者の軽傷は敗者の致命傷か。」
-Dialogue: 0,0:02:04.42,0:02:11.23,Large Gothic,,0,0,0,,変質の恐怖に溺れ震えた我の欠
-Dialogue: 0,0:02:11.23,0:02:12.51,Large Gothic,,0,0,0,,楽園に憧れた
+Dialogue: 0,0:02:04.42,0:02:11.23,Large Gothic,,0,0,0,,{\k78}変{\k53}質{\k23}の{\k42}恐{\k13}怖{\k14}に{\k16}溺{\k13}れ{\k13}震{\k11}え{\k93}た{\k97}我{\k41}の{\k174}欠
+Dialogue: 0,0:02:11.23,0:02:12.51,Large Gothic,,0,0,0,,{\k30}楽{\k22}園{\k11}に{\k16}憧{\k15}れ{\k34}た
 Dialogue: 0,0:02:12.51,0:02:12.82,Large Gothic,,0,0,0,,{\k17}だ{\k14}が
-Dialogue: 0,0:02:12.82,0:02:14.64,Large Gothic,,0,0,0,,穢れたとが許されない
-Dialogue: 0,0:02:14.64,0:02:16.20,Large Gothic,,0,0,0,,災厄と呪い喰らうのだ
+Dialogue: 0,0:02:12.82,0:02:14.64,Large Gothic,,0,0,0,,{\k24}穢{\k8}れ{\k11}た{\k10}と{\k9}が{\k22}許{\k14}さ{\k13}れ{\k15}な{\k56}い
+Dialogue: 0,0:02:14.64,0:02:16.20,Large Gothic,,0,0,0,,{\k33}災{\k37}厄{\k11}と{\k16}呪{\k10}い{\k12}喰{\k11}ら{\k9}う{\k10}の{\k7}だ
 Dialogue: 0,0:02:16.20,0:02:18.16,Large Gothic,,0,0,0,,{\k71}悪{\k125}夢
-Dialogue: 0,0:02:18.16,0:02:19.74,Large Gothic,,0,0,0,,深淵に崩れた
+Dialogue: 0,0:02:18.16,0:02:19.74,Large Gothic,,0,0,0,,{\k27}深{\k22}淵{\k8}に{\k28}崩{\k17}れ{\k56}た
 Dialogue: 0,0:02:19.74,0:02:21.50,Large Gothic,,0,0,0,,{\k37}穢{\k13}さ{\k8}れ{\k8}た{\k37}心{\k73}が
 Dialogue: 0,0:02:21.50,0:02:24.22,Large Gothic,,0,0,0,,喜びを捨てた害悪となる
 Dialogue: 0,0:02:24.22,0:02:24.82,Large Gothic,,0,0,0,,{\k20}呉{\k20}れ{\k20}る
@@ -73,18 +73,18 @@ Dialogue: 0,0:02:32.74,0:02:34.59,Large Gothic,,0,0,0,,焦れ焼いて
 Dialogue: 0,0:02:34.59,0:02:38.47,Large Gothic,,0,0,0,,自ら痛みを抱いて
 Dialogue: 0,0:02:38.47,0:02:41.72,Large Gothic,,0,0,0,,愚鈍の涙零れ堕ちてゆく
 Dialogue: 0,0:02:41.72,0:02:46.45,Large Gothic,,0,0,0,,宵闇に輝く明星は
-Dialogue: 0,0:02:46.45,0:02:50.54,Large Gothic,,0,0,0,,不遜さを嗤う
+Dialogue: 0,0:02:46.45,0:02:50.54,Large Gothic,,0,0,0,,{\k18}不{\k42}遜{\k58}さ{\k31}を{\k93}嗤{\k167}う
 Dialogue: 0,0:03:50.96,0:03:54.98,Large Gothic,,0,0,0,,沈む時が示す終焉までの猶予
 Dialogue: 0,0:03:54.98,0:03:57.34,Large Gothic,,0,0,0,,拒めば其処には敗北
 Dialogue: 0,0:03:57.34,0:04:01.26,Large Gothic,,0,0,0,,挑み敗れるのもまた奈落
 Dialogue: 0,0:04:05.13,0:04:10.44,Large Gothic,,0,0,0,,強いられた闘争の果てに一体何を見出すのか
 Dialogue: 0,0:04:11.34,0:04:16.81,Large Gothic,,0,0,0,,赤涙覗く傷を負いながら探し求めている
-Dialogue: 0,0:04:19.08,0:04:26.14,Large Gothic,,0,0,0,,太陽嗤う煌々
+Dialogue: 0,0:04:19.08,0:04:26.14,Large Gothic,,0,0,0,,{\k40}太{\k52}陽{\k100}嗤{\k127}う{\k82}煌{\k305}々
 Dialogue: 0,0:04:26.14,0:04:29.34,Large Gothic,,0,0,0,,{\k38}華{\k83}は{\k48}枯{\k37}れ{\k114}て
-Dialogue: 0,0:04:29.34,0:04:31.70,Large Gothic,,0,0,0,,脈が割れて
+Dialogue: 0,0:04:29.34,0:04:31.70,Large Gothic,,0,0,0,,{\k45}脈{\k22}が{\k42}割{\k41}れ{\k86}て
 Dialogue: 0,0:04:32.51,0:04:34.47,Large Gothic,,0,0,0,,{\k88}嗚{\k108}呼
 Dialogue: 0,0:04:34.47,0:04:38.88,Large Gothic,,0,0,0,,{\k40}踠{\k23}く{\k130}此{\k39}の{\k209}掌
-Dialogue: 0,0:04:39.38,0:04:41.34,Large Gothic,,0,0,0,,裂けようと
+Dialogue: 0,0:04:39.38,0:04:41.34,Large Gothic,,0,0,0,,{\k43}裂{\k39}け{\k47}よ{\k46}う{\k21}と
 Dialogue: 0,0:04:41.34,0:04:42.00,Large Gothic,,0,0,0,,{\k22}揺{\k22}れ{\k22}る
 Dialogue: 0,0:04:42.00,0:04:45.14,Large Gothic,,0,0,0,,暁の日に此の身を焦がし
 Dialogue: 0,0:04:45.14,0:04:48.70,Large Gothic,,0,0,0,,叫び続けていた言葉は
