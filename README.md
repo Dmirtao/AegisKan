@@ -1,4 +1,4 @@
-# AegisKan
+### AegisKan
 Javascript based Kanji animation and rendering.
 Uses Aegisub and .ass files to create draw timings.
 
@@ -7,15 +7,17 @@ SVG.js handles drawing and animation.
 Kanji paths are provided by the KanjiVG database.
 
 
-# Host
+### Host
 Hosted at (https://dmirtao.github.io/AegisKan/)
 
-# Applications
+### Applications
 - [Single Kanji viewer](/viewer.html)
 - [Multiple Kanji Drawing](/multiViewer.html)
 
-# Credits
+### Credits
 - [KanjiVG](http://kanjivg.tagaini.net/index.html)
 - [libjass](https://github.com/Arnavion/libjass)
 - [SVG.js](http://svgjs.com/)
 
+### Examples (Debug)
+- [How to brushstroke](https://bl.ocks.org/maelp/5913757)
