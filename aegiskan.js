@@ -241,6 +241,10 @@ AegisKanMultiView = {
 			}
 		},
 
+		setColor:function (color) {
+			this.color = color;
+		}
+
 	// Core querying code
 	refreshKanji:function () {
 		if (this.fetchNeeded && this.kanji != "") { 

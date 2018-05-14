@@ -51,6 +51,7 @@
 				AegisKanSingleView.setFrameDim(jQuery('#frameDim').val());
 				AegisKanSingleView.setStrokeWidth(jQuery('#strokeWidth').val());
 				AegisKanSingleView.setZoom(jQuery('#zoomFactor').val());
+				AegisKanSingleView.setColor(jQuery('#strokeColor').val());
 				if (jQuery('#animate').prop('checked')) {
 					AegisKanSingleView.setAnimate('true');
 					AegisKanSingleView.setSimDraw('false');
@@ -103,6 +104,12 @@
 							<label class="control-label" for="animateTime">Animation Time per Stroke (ms)</label>
 							<div class="controls docs-input-sizes">
 								<input class="form-control" type="text" value="1000" id="animateTime" placeholder="1000">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="strokeColor">Stroke color (hex)</label>
+							<div class="controls docs-input-sizes">
+								<input class="form-control" type="text" value="#000000" id="strokeColor" placeholder="#000000">
 							</div>
 						</div>
 						<div class="control-group">
