@@ -18,6 +18,7 @@ Hosted at (https://dmirtao.github.io/AegisKan/)
 - [KanjiVG](http://kanjivg.tagaini.net/index.html)
 - [libjass](https://github.com/Arnavion/libjass)
 - [SVG.js](http://svgjs.com/)
+- [brushstroke.js](https://github.com/lmgonzalves/brushstroke)
 
 ### Examples (Debug)
-- [How to brushstroke](https://bl.ocks.org/maelp/5913757)
+- [How to brushstroke](https://scotch.io/tutorials/drawing-creative-brushstrokes-with-javascript)

@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="brushstroke.js"></script>
 	<script type="text/javascript" src="aegiskan.js" ></script>
 </head>
 <body>
@@ -48,24 +49,30 @@
     		'false'								// simDraw
     		);
 			jQuery('#viewerParams').submit(function() {
-				AegisKanSingleView.setFrameDim(jQuery('#frameDim').val());
-				AegisKanSingleView.setStrokeWidth(jQuery('#strokeWidth').val());
-				AegisKanSingleView.setZoom(jQuery('#zoomFactor').val());
-				AegisKanSingleView.setColor(jQuery('#strokeColor').val());
-				if (jQuery('#animate').prop('checked')) {
-					AegisKanSingleView.setAnimate('true');
-					AegisKanSingleView.setSimDraw('false');
-				} else if (jQuery('#simDraw').prop('checked')) {
-					AegisKanSingleView.setAnimate('true');
-					AegisKanSingleView.setSimDraw('true');
-				} else {
-					AegisKanSingleView.setAnimate('false');
-					AegisKanSingleView.setSimDraw('false');
+				if (jQuery('#roundPen').prop('checked')) {
+					AegisKanSingleView.setFrameDim(jQuery('#frameDim').val());
+					AegisKanSingleView.setStrokeWidth(jQuery('#strokeWidth').val());
+					AegisKanSingleView.setZoom(jQuery('#zoomFactor').val());
+					AegisKanSingleView.setColor(jQuery('#strokeColor').val());
+					if (jQuery('#animate').prop('checked')) {
+						AegisKanSingleView.setAnimate('true');
+						AegisKanSingleView.setSimDraw('false');
+					} else if (jQuery('#simDraw').prop('checked')) {
+						AegisKanSingleView.setAnimate('true');
+						AegisKanSingleView.setSimDraw('true');
+					} else {
+						AegisKanSingleView.setAnimate('false');
+						AegisKanSingleView.setSimDraw('false');
+					}
+					AegisKanSingleView.setAnimateTime(jQuery('#animateTime').val());
+					AegisKanSingleView.setKanji(jQuery('#kanji').val());
+					AegisKanSingleView.refreshKanji();
+					return false;
+				} else if (jQuery('#founPen').prop('checked')) {
+					
+				} else if (jQuery('#caliBrush').prop('checked')) {
+					
 				}
-				AegisKanSingleView.setAnimateTime(jQuery('#animateTime').val());
-				AegisKanSingleView.setKanji(jQuery('#kanji').val());
-				AegisKanSingleView.refreshKanji();
-				return false;
 			});
 		});
 	</script>
@@ -77,12 +84,6 @@
 				<form id="viewerParams" action="#" class="form-horizontal">
 					<fieldset>
 						<div class="control-group">
-							<label class="control-label" for="frameDim">Frame Dimension (px)</label>
-							<div class="controls docs-input-sizes">
-								<input class="form-control" type="text" value="500" id="frameDim" placeholder="500">
-							</div>
-						</div>
-						<div class="control-group">
 							<label class="control-label" for="kanji">Kanji</label>
 							<div class="controls docs-input-sizes">
 								<input class="form-control" type="text" value="" id="kanji" placeholder="e.g. 勝">
@@ -92,6 +93,12 @@
 							<label class="control-label" for="strokeWidth">Stroke Width</label>
 							<div class="controls docs-input-sizes">
 								<input class="form-control" type="text" value="5" id="strokeWidth" placeholder="5">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="frameDim">Frame Dimension (px)</label>
+							<div class="controls docs-input-sizes">
+								<input class="form-control" type="text" value="500" id="frameDim" placeholder="500">
 							</div>
 						</div>
 						<div class="control-group">
@@ -113,7 +120,7 @@
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" id="optionsCheckboxes">Options</label>
+							<label class="control-label" id="optionsCheckboxes">Animation Options</label>
 							<div class="radio">
 								<label class="radio">
 									<input type="radio" id="noOpt" name="optRadio" checked="">No animation
@@ -127,6 +134,24 @@
 							<div class="radio">
 								<label class="radio">
 									<input type="radio" id="simDraw" name="optRadio">Draw all strokes simultaeneously
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" id="optionsCheckboxes">Brush Styles</label>
+							<div class="radio">
+								<label class="radio">
+									<input type="radio" id="roundPen" name="optRadio" checked="">Round pen
+								</label>
+							</div>
+							<div class="radio">
+								<label class="radio">
+									<input type="radio" id="founPen" name="optRadio">Fountain pen
+								</label>
+							</div>
+							<div class="radio">
+								<label class="radio">
+									<input type="radio" id="caliBrush" name="optRadio">Caligraphy brush
 								</label>
 							</div>
 						</div>
