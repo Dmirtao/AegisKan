@@ -35,6 +35,9 @@
 	});
 }).call(this);
 
+
+
+
 AegisKanSingleView = {
 	initialize:function (divName, frameDim, strokeWidth, fontSize, zoomFactor, kanji, color, animate, animateTime, simDraw) {
 		this.canvas = new SVG(divName);
