@@ -15,8 +15,8 @@ Audio File: E:/Music/[TBS] MONACA - NieR_Automata Original Soundtrack (OST) [FLA
 Video File: ?dummy:60.000000:20800:1920:1080:47:163:254:
 Video AR Value: 1.777778
 Video Zoom Percent: 0.250000
-Active Line: 10
-Video Position: 4880
+Active Line: 16
+Video Position: 6421
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -25,51 +25,51 @@ Style: Large Gothic,MS Gothic,60,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:27.04,0:00:30.28,Large Gothic,,0,0,0,,{\k36}消{\k26}え{\k30}ゆ{\k12}く{\k71}救{\k149}い 
+Dialogue: 0,0:00:27.04,0:00:30.28,Large Gothic,,0,0,0,,{\k36}消{\k26}え{\k30}ゆ{\k12}く{\k71}救{\k149}い
 Dialogue: 0,0:00:30.28,0:00:32.76,Large Gothic,,0,0,0,,{\k35}途{\k24}絶{\k30}え{\k26}る{\k42}カ{\k18}ラ{\k73}ダ
 Dialogue: 0,0:00:32.76,0:00:40.08,Large Gothic,,0,0,0,,{\k49}空{\k242}は{\k46}今{\k22}も{\k62}暗{\k311}く
 Dialogue: 0,0:00:40.08,0:00:43.38,Large Gothic,,0,0,0,,{\k28}止{\k33}ま{\k30}っ{\k22}た{\k35}時{\k182}計
-Dialogue: 0,0:00:43.38,0:00:45.72,Large Gothic,,0,0,0,,{\k21}鳴{\k20}ら{\k27}な{\k34}い{\k43}機{\k89}械 
+Dialogue: 0,0:00:43.38,0:00:45.72,Large Gothic,,0,0,0,,{\k21}鳴{\k20}ら{\k27}な{\k34}い{\k43}機{\k89}械
 Dialogue: 0,0:00:45.72,0:00:51.82,Large Gothic,,0,0,0,,{\k295}声{\k41}届{\k26}か{\k37}な{\k25}く{\k186}て
-Dialogue: 0,0:00:51.82,0:00:59.18,Large Gothic,,0,0,0,,{\k26}こ{\k21}れ{\k33}が{\k329}僕{\k109}の{\k57}呪{\k161}い 
-Dialogue: 0,0:00:59.18,0:01:05.66,Large Gothic,,0,0,0,,{\k57}犯{\k48}し{\k38}た{\k107}罪{\k42}の{\k70}深{\k35}さ{\k251}が 
-Dialogue: 0,0:01:05.66,0:01:11.80,Large Gothic,,0,0,0,,{\k165}キ{\k162}ミ{\k108}の{\k63}願{\k116}い 
+Dialogue: 0,0:00:51.82,0:00:59.18,Large Gothic,,0,0,0,,{\k26}こ{\k21}れ{\k33}が{\k329}僕{\k109}の{\k57}呪{\k161}い
+Dialogue: 0,0:00:59.18,0:01:05.66,Large Gothic,,0,0,0,,{\k57}犯{\k48}し{\k38}た{\k107}罪{\k42}の{\k70}深{\k35}さ{\k251}が
+Dialogue: 0,0:01:05.66,0:01:11.80,Large Gothic,,0,0,0,,{\k165}キ{\k162}ミ{\k108}の{\k63}願{\k116}い
 Dialogue: 0,0:01:11.80,0:01:21.33,Large Gothic,,0,0,0,,{\k81}穢{\k22}れ{\k42}た{\k184}魂{\k42}無{\k233}く{\k87}贖{\k97}い{\k22}だ{\k25}け{\k118}ど
-Dialogue: 0,0:01:21.33,0:01:24.75,Large Gothic,,0,0,0,,そう僕らは今 
-Dialogue: 0,0:01:24.75,0:01:27.97,Large Gothic,,0,0,0,,ああ、無価値でも叫ぶ 
-Dialogue: 0,0:01:27.97,0:01:34.29,Large Gothic,,0,0,0,,あの壊レタ世界ノ歌 
-Dialogue: 0,0:01:34.29,0:01:37.69,Large Gothic,,0,0,0,,そう僕らは今 
-Dialogue: 0,0:01:37.69,0:01:40.94,Large Gothic,,0,0,0,,ああ、無意味でも願う 
-Dialogue: 0,0:01:40.94,0:01:47.01,Large Gothic,,0,0,0,,ただ君との未来を 
-Dialogue: 0,0:01:47.01,0:02:00.79,Large Gothic,,0,0,0,,あの日の笑顔は愛しいまま消えて…… 
-Dialogue: 0,0:02:14.21,0:02:17.45,Large Gothic,,0,0,0,,溢れる緑 
-Dialogue: 0,0:02:17.45,0:02:19.84,Large Gothic,,0,0,0,,零れる命 
-Dialogue: 0,0:02:19.84,0:02:27.20,Large Gothic,,0,0,0,,風は今も遠く 
-Dialogue: 0,0:02:27.20,0:02:32.78,Large Gothic,,0,0,0,,剥がれる錆びとうごめく刃 
-Dialogue: 0,0:02:32.78,0:02:38.93,Large Gothic,,0,0,0,,死が潜む森に 
-Dialogue: 0,0:02:38.93,0:02:46.22,Large Gothic,,0,0,0,,これが僕の呪い 
-Dialogue: 0,0:02:46.22,0:02:52.68,Large Gothic,,0,0,0,,約束殺す痛みが 
-Dialogue: 0,0:02:52.68,0:02:58.73,Large Gothic,,0,0,0,,キミの願い 
-Dialogue: 0,0:02:58.73,0:03:08.38,Large Gothic,,0,0,0,,最後の夢を捨てた償いだけど 
-Dialogue: 0,0:03:08.38,0:03:11.73,Large Gothic,,0,0,0,,そう僕らは今 
-Dialogue: 0,0:03:11.73,0:03:14.99,Large Gothic,,0,0,0,,ああ、無価値でも叫ぶ 
-Dialogue: 0,0:03:14.99,0:03:21.32,Large Gothic,,0,0,0,,この汚れた世界の愛 
-Dialogue: 0,0:03:21.32,0:03:24.72,Large Gothic,,0,0,0,,そう僕らは今 
+Dialogue: 0,0:01:21.33,0:01:24.75,Large Gothic,,0,0,0,,{\k27}そ{\k28}う{\k40}僕{\k30}ら{\k40}は{\k177}今
+Dialogue: 0,0:01:24.75,0:01:27.97,Large Gothic,,0,0,0,,{\k19}あ{\k21}あ、{\k16}無{\k20}価{\k26}値{\k40}で{\k31}も{\k65}叫{\k84}ぶ
+Dialogue: 0,0:01:27.97,0:01:34.29,Large Gothic,,0,0,0,,{\k24}あ{\k18}の{\k59}壊{\k47}レ{\k27}タ{\k69}世{\k87}界{\k156}ノ{\k145}歌
+Dialogue: 0,0:01:34.29,0:01:37.69,Large Gothic,,0,0,0,,{\k28}そ{\k31}う{\k37}僕{\k25}ら{\k44}は{\k175}今
+Dialogue: 0,0:01:37.69,0:01:40.94,Large Gothic,,0,0,0,,{\k20}あ{\k22}あ、{\k24}無{\k19}意{\k19}味{\k42}で{\k39}も{\k61}願{\k79}う
+Dialogue: 0,0:01:40.94,0:01:47.01,Large Gothic,,0,0,0,,{\k20}た{\k20}だ{\k64}君{\k46}と{\k35}の{\k59}未{\k83}来{\k280}を
+Dialogue: 0,0:01:47.01,0:02:00.79,Large Gothic,,0,0,0,,{\k20}あ{\k22}の{\k24}日{\k19}の{\k38}笑{\k66}顔{\k60}は{\k65}愛{\k50}し{\k168}い{\k19}ま{\k422}ま{\k44}消{\k30}え{\k168}て{\k163}……
+Dialogue: 0,0:02:14.21,0:02:17.45,Large Gothic,,0,0,0,,溢れる緑
+Dialogue: 0,0:02:17.45,0:02:19.84,Large Gothic,,0,0,0,,零れる命
+Dialogue: 0,0:02:19.84,0:02:27.20,Large Gothic,,0,0,0,,風は今も遠く
+Dialogue: 0,0:02:27.20,0:02:32.78,Large Gothic,,0,0,0,,剥がれる錆びとうごめく刃
+Dialogue: 0,0:02:32.78,0:02:38.93,Large Gothic,,0,0,0,,死が潜む森に
+Dialogue: 0,0:02:38.93,0:02:46.22,Large Gothic,,0,0,0,,これが僕の呪い
+Dialogue: 0,0:02:46.22,0:02:52.68,Large Gothic,,0,0,0,,約束殺す痛みが
+Dialogue: 0,0:02:52.68,0:02:58.73,Large Gothic,,0,0,0,,キミの願い
+Dialogue: 0,0:02:58.73,0:03:08.38,Large Gothic,,0,0,0,,最後の夢を捨てた償いだけど
+Dialogue: 0,0:03:08.38,0:03:11.73,Large Gothic,,0,0,0,,そう僕らは今
+Dialogue: 0,0:03:11.73,0:03:14.99,Large Gothic,,0,0,0,,ああ、無価値でも叫ぶ
+Dialogue: 0,0:03:14.99,0:03:21.32,Large Gothic,,0,0,0,,この汚れた世界の愛
+Dialogue: 0,0:03:21.32,0:03:24.72,Large Gothic,,0,0,0,,そう僕らは今
 Dialogue: 0,0:03:24.72,0:03:27.96,Large Gothic,,0,0,0,,ああ、無意味でも願う
-Dialogue: 0,0:03:27.96,0:03:34.06,Large Gothic,,0,0,0,,ただキミとの時間を 
-Dialogue: 0,0:03:34.06,0:03:47.81,Large Gothic,,0,0,0,,溺れた意識は優しいまま消えて… 
-Dialogue: 0,0:04:16.43,0:04:19.87,Large Gothic,,0,0,0,,そう僕らは今 
-Dialogue: 0,0:04:19.87,0:04:23.14,Large Gothic,,0,0,0,,ああ、無価値でも叫ぶ 
-Dialogue: 0,0:04:23.14,0:04:29.49,Large Gothic,,0,0,0,,あの壊レタ世界の歌 
-Dialogue: 0,0:04:29.49,0:04:32.81,Large Gothic,,0,0,0,,そう僕らは今 
-Dialogue: 0,0:04:32.81,0:04:36.06,Large Gothic,,0,0,0,,ああ、無意味でも願う 
+Dialogue: 0,0:03:27.96,0:03:34.06,Large Gothic,,0,0,0,,ただキミとの時間を
+Dialogue: 0,0:03:34.06,0:03:47.81,Large Gothic,,0,0,0,,溺れた意識は優しいまま消えて…
+Dialogue: 0,0:04:16.43,0:04:19.87,Large Gothic,,0,0,0,,そう僕らは今
+Dialogue: 0,0:04:19.87,0:04:23.14,Large Gothic,,0,0,0,,ああ、無価値でも叫ぶ
+Dialogue: 0,0:04:23.14,0:04:29.49,Large Gothic,,0,0,0,,あの壊レタ世界の歌
+Dialogue: 0,0:04:29.49,0:04:32.81,Large Gothic,,0,0,0,,そう僕らは今
+Dialogue: 0,0:04:32.81,0:04:36.06,Large Gothic,,0,0,0,,ああ、無意味でも願う
 Dialogue: 0,0:04:36.06,0:04:42.40,Large Gothic,,0,0,0,,ただキミとの未来を
-Dialogue: 0,0:04:42.40,0:04:45.80,Large Gothic,,0,0,0,,そう僕らは今 
-Dialogue: 0,0:04:45.80,0:04:49.04,Large Gothic,,0,0,0,,ああ、無価値でも叫ぶ 
-Dialogue: 0,0:04:49.04,0:04:55.35,Large Gothic,,0,0,0,,この汚れた世界の愛 
-Dialogue: 0,0:04:55.35,0:04:58.77,Large Gothic,,0,0,0,,そう僕らは今 
-Dialogue: 0,0:04:58.77,0:05:02.01,Large Gothic,,0,0,0,,ああ、無意味でも願う 
-Dialogue: 0,0:05:02.01,0:05:08.12,Large Gothic,,0,0,0,,ただキミとの時間を 
-Dialogue: 0,0:05:08.12,0:05:15.38,Large Gothic,,0,0,0,,祈りが赦しを得られずとも 
+Dialogue: 0,0:04:42.40,0:04:45.80,Large Gothic,,0,0,0,,そう僕らは今
+Dialogue: 0,0:04:45.80,0:04:49.04,Large Gothic,,0,0,0,,ああ、無価値でも叫ぶ
+Dialogue: 0,0:04:49.04,0:04:55.35,Large Gothic,,0,0,0,,この汚れた世界の愛
+Dialogue: 0,0:04:55.35,0:04:58.77,Large Gothic,,0,0,0,,そう僕らは今
+Dialogue: 0,0:04:58.77,0:05:02.01,Large Gothic,,0,0,0,,ああ、無意味でも願う
+Dialogue: 0,0:05:02.01,0:05:08.12,Large Gothic,,0,0,0,,ただキミとの時間を
+Dialogue: 0,0:05:08.12,0:05:15.38,Large Gothic,,0,0,0,,祈りが赦しを得られずとも
 Dialogue: 0,0:05:15.38,0:05:21.61,Large Gothic,,0,0,0,,……僕は﻿
 Dialogue: 0,0:05:21.61,0:05:23.61,Large Gothic,,0,0,0,,
